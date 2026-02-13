@@ -8,10 +8,19 @@
 </head>
 <body>
     <div class="logo">ИИ vs Человек</div>
+
+    <!-- Модальное окно для имени -->
+    <div id="nameModal" class="modal">
+        <div class="modal-content">
+            <h2>Введите ваше имя</h2>
+            <input type="text" id="username" placeholder="Ваше имя">
+            <button onclick="startTest()">Начать эксперимент</button>
+        </div>
+    </div>
+
     <div class="container">
         <h2 id="subtitle" class="subtitle">Выберите, кто создал контент</h2>
-        
-        <!-- Прогресс-бар -->
+
         <div class="progress-container">
             <div id="progress-bar"></div>
         </div>
@@ -22,48 +31,15 @@
             <button onclick="answer('ai')">ИИ</button>
             <button onclick="answer('human')">Человек</button>
         </div>
-        <input type="text" id="username" placeholder="Введите ваше имя" style="padding:10px; font-size:16px; width:80%; border-radius:10px; margin-bottom:15px;">
-
-        <button id="startBtn" onclick="startTest()">Начать эксперимент</button>
-
 
         <div id="result"></div>
     </div>
 
-    <script src="script.js"></script>\
-    <!-- Firebase App (обязательный) -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<!-- Firebase Firestore (для хранения результатов) -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <!-- Firebase SDK (compat версия) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
-<script>
-  //// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAkUy0ypM4Chg9Pim2PaAd2dJyQURyisfc",
-  authDomain: "artotai.firebaseapp.com",
-  projectId: "artotai",
-  storageBucket: "artotai.firebasestorage.app",
-  messagingSenderId: "643723224513",
-  appId: "1:643723224513:web:1288944ca9e33ed2847b40",
-  measurementId: "G-02J5X0DRGL"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-  
-
-  // Инициализация Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-</script>
-
+    <!-- Основной JS -->
+    <script src="script.js"></script>
 </body>
 </html>
