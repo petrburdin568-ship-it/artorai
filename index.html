@@ -9,12 +9,11 @@
 <body>
     <div class="logo">ИИ vs Человек</div>
 
-    <!-- Модальное окно для имени -->
     <div id="nameModal" class="modal">
         <div class="modal-content">
             <h2>Введите ваше имя</h2>
             <input type="text" id="username" placeholder="Ваше имя">
-            <button onclick="startTest()">Начать эксперимент</button>
+            <button onclick="startTest()">Начать тест</button>
         </div>
     </div>
 
@@ -35,14 +34,8 @@
         <div id="result"></div>
     </div>
 
-    <!-- Firebase SDK (compat версия) -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
-    <!-- Основной JS -->
     <script src="script.js"></script>
 </body>
 </html>
-
-
-    
