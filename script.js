@@ -50,13 +50,13 @@ let questions = [
   { type: "music", audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3", answer: "human" },
   {
     type: "image",
-    image: "image/imagesart-ai-1.jpg.png",
+    image: "image/ai1.png",
     caption: "Посмотрите на изображение и выберите вариант:",
     answer: "ai"
   },
   {
     type: "image",
-    image: "image/imagesart-human-1.jpg.webp",
+    image: "image/human1.webp",
     caption: "Посмотрите на изображение и выберите вариант:",
     answer: "human"
   }
