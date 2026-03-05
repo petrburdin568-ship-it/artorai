@@ -1,4 +1,4 @@
-// Firebase
+﻿// Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAkUy0ypM4Chg9Pim2PaAd2dJyQURyisfc",
   authDomain: "artotai.firebaseapp.com",
@@ -266,4 +266,3 @@ function showResult() {
 }
 
 initApp();
-
