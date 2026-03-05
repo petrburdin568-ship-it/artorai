@@ -1,4 +1,4 @@
-﻿// Firebase
+// Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAkUy0ypM4Chg9Pim2PaAd2dJyQURyisfc",
   authDomain: "artotai.firebaseapp.com",
@@ -12,36 +12,36 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const USERNAME_STORAGE_KEY = "artorai_username";
 
-// Р’РѕРїСЂРѕСЃС‹
+// Вопросы
 let questions = [
   {
     type: "poem",
     content:
-      "Р’ С‚СѓРјР°РЅРµ СЂР°РЅРЅРµРіРѕ СѓС‚СЂР°\nР›РёСЃС‚СЊСЏ С€РµРїС‡СѓС‚ СЃРІРѕРё С‚Р°Р№РЅС‹,\nР РјРёСЂ С‚РёС…Рѕ РґС‹С€РёС‚ РІРѕРєСЂСѓРі,\nРЎР»РѕРІРЅРѕ РІСЂРµРјСЏ Р·Р°РјРµРґР»РёР»РѕСЃСЊ.",
+      "В тумане раннего утра\nЛистья шепчут свои тайны,\nИ мир тихо дышит вокруг,\nСловно время замедлилось.",
     answer: "ai"
   },
   {
     type: "poem",
     content:
-      "РћСЃРµРЅСЊ. РЎР°Рґ РѕРїСѓСЃС‚РµР»С‹Р№,\nР”РѕР¶РґРёРє РјРµР»РєРёР№ СЃС‚СѓС‡РёС‚.\nР›РёСЃС‚ РєСЂСѓР¶РёС‚СЃСЏ РЅРµСЃРјРµР»С‹Р№,\nР С‚СѓРјР°РЅ РІСЃС‘ РјРѕР»С‡РёС‚.",
+      "Осень. Сад опустелый,\nДождик мелкий стучит.\nЛист кружится несмелый,\nИ туман всё молчит.",
     answer: "human"
   },
   {
     type: "poem",
     content:
-      "РЎРІРµС‚ С„РѕРЅР°СЂРµР№ СЃРєРѕР»СЊР·РёС‚ РїРѕ РјРѕСЃС‚РѕРІРѕР№,\nРќРѕС‡СЊ РїСЂСЏС‡РµС‚ РіРѕСЂРѕРґР° СЃРµРєСЂРµС‚С‹,\nРўРёС€РёРЅР° Р·Р°РїРѕР»РЅСЏРµС‚ РїСѓСЃС‚РѕС‚Сѓ,\nР РІРµС‚РµСЂ РёРіСЂР°РµС‚ СЃ РѕРіРЅСЏРјРё.",
+      "Свет фонарей скользит по мостовой,\nНочь прячет города секреты,\nТишина заполняет пустоту,\nИ ветер играет с огнями.",
     answer: "ai"
   },
   {
     type: "poem",
     content:
-      "Р—РІС‘Р·РґС‹ С‚РёС…Рѕ РїР°РґР°СЋС‚ РІ СЂРµРєСѓ,\nР РѕС‚СЂР°Р¶РµРЅРёРµ РёС… РјРµСЂС†Р°РµС‚.\nРЎРєРІРѕР·СЊ РЅРѕС‡СЊ РїСЂРѕС…РѕРґРёС‚ Р»С‘РіРєРёР№ СЃРІРµС‚,\nР СЃРµСЂРґС†Рµ Рє С‚Р°Р№РЅРµ РїСЂРёРєРѕРІР°РЅРѕ.",
+      "Звёзды тихо падают в реку,\nИ отражение их мерцает.\nСквозь ночь проходит лёгкий свет,\nИ сердце к тайне приковано.",
     answer: "human"
   },
   {
     type: "poem",
     content:
-      "РЎРєСЂРёРї СЃС‚Р°СЂС‹С… РґРІРµСЂРµР№ РІ РїСѓСЃС‚РѕРј РґРѕРјРµ,\nР›Р°РјРїР° Р»СЊС‘С‚ РјСЏРіРєРёР№ СЃРІРµС‚ РЅР° РїРѕР».\nРўС‘РїР»С‹Р№ Р·Р°РїР°С… СЃС‚Р°СЂС‹С… РєРЅРёРі Рё Р±СѓРјР°РіРё,\nР РІСЂРµРјСЏ РєР°Р¶РµС‚СЃСЏ РѕСЃС‚Р°РЅРѕРІРёРІС€РёРјСЃСЏ.",
+      "Скрип старых дверей в пустом доме,\nЛампа льёт мягкий свет на пол.\nТёплый запах старых книг и бумаги,\nИ время кажется остановившимся.",
     answer: "human"
   },
   { type: "music", audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", answer: "ai" },
@@ -51,13 +51,13 @@ let questions = [
   {
     type: "image",
     image: "image/ai1.png",
-    caption: "РџРѕСЃРјРѕС‚СЂРёС‚Рµ РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёРµ Рё РІС‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚:",
+    caption: "Посмотрите на изображение и выберите вариант:",
     answer: "ai"
   },
   {
     type: "image",
     image: "image/human1.webp",
-    caption: "РџРѕСЃРјРѕС‚СЂРёС‚Рµ РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёРµ Рё РІС‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚:",
+    caption: "Посмотрите на изображение и выберите вариант:",
     answer: "human"
   }
 ];
@@ -93,12 +93,12 @@ function getUnlockedAchievements(percentage) {
   const imageMistakes = wrongAnswers.filter((err) => err.question.type === "image").length;
   const musicMistakes = wrongAnswers.filter((err) => err.question.type === "music").length;
 
-  if (percentage === 100) unlocked.push("РРґРµР°Р»СЊРЅР°СЏ С‚РѕС‡РЅРѕСЃС‚СЊ");
-  if (percentage >= 80) unlocked.push("Р”РµС‚РµРєС‚РёРІ РєРѕРЅС‚РµРЅС‚Р°");
-  if (percentage >= 60) unlocked.push("Р’РЅРёРјР°С‚РµР»СЊРЅС‹Р№ РёРіСЂРѕРє");
-  if (hasImageQuestions && imageMistakes === 0) unlocked.push("РћСЃС‚СЂС‹Р№ РіР»Р°Р·");
-  if (hasMusicQuestions && musicMistakes === 0) unlocked.push("РРґРµР°Р»СЊРЅС‹Р№ СЃР»СѓС…");
-  if (unlocked.length === 0) unlocked.push("РџРµСЂРІС‹Р№ РїСЂРѕР№РґРµРЅРЅС‹Р№ С‚РµСЃС‚");
+  if (percentage === 100) unlocked.push("Идеальная точность");
+  if (percentage >= 80) unlocked.push("Детектив контента");
+  if (percentage >= 60) unlocked.push("Внимательный игрок");
+  if (hasImageQuestions && imageMistakes === 0) unlocked.push("Острый глаз");
+  if (hasMusicQuestions && musicMistakes === 0) unlocked.push("Идеальный слух");
+  if (unlocked.length === 0) unlocked.push("Первый пройденный тест");
 
   return unlocked;
 }
@@ -132,7 +132,7 @@ function initApp() {
 function startTest() {
   const username = document.getElementById("username").value.trim();
   if (!username) {
-    alert("Р’РІРµРґРёС‚Рµ РёРјСЏ!");
+    alert("Введите имя!");
     return;
   }
 
@@ -157,10 +157,10 @@ function showQuestion() {
   if (q.type === "music") {
     const audioBox = document.createElement("div");
     audioBox.innerHTML = `
-      <p style="margin-bottom:12px; font-size:18px;">РЎР»СѓС€Р°Р№С‚Рµ Р°СѓРґРёРѕ Рё РІС‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚:</p>
+      <p style="margin-bottom:12px; font-size:18px;">Слушайте аудио и выберите вариант:</p>
       <audio controls class="fade-in">
         <source src="${q.audio}" type="audio/mpeg">
-        РўРµРі audio РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ РІР°С€РёРј Р±СЂР°СѓР·РµСЂРѕРј.
+        Тег audio не поддерживается вашим браузером.
       </audio>
     `;
     contentDiv.appendChild(audioBox);
@@ -225,13 +225,13 @@ function showResult() {
 
   const percentage = Math.round((score / questions.length) * 100);
   const resultDiv = document.getElementById("result");
-  resultDiv.innerText = "Р’Р°С€ СЂРµР·СѓР»СЊС‚Р°С‚: " + percentage + "% РїСЂР°РІРёР»СЊРЅС‹С… РѕС‚РІРµС‚РѕРІ";
+  resultDiv.innerText = "Ваш результат: " + percentage + "% правильных ответов";
   resultDiv.classList.add("fade-in");
 
   const achievements = getUnlockedAchievements(percentage);
   const achContainer = document.createElement("div");
   achContainer.classList.add("achievements");
-  achContainer.innerHTML = "<strong>Р”РѕСЃС‚РёР¶РµРЅРёСЏ:</strong>";
+  achContainer.innerHTML = "<strong>Достижения:</strong>";
   document.querySelector(".container").appendChild(achContainer);
 
   achievements.forEach((ach, index) => {
@@ -248,19 +248,19 @@ function showResult() {
       score: percentage,
       date: new Date()
     })
-    .then(() => console.log("Р РµР·СѓР»СЊС‚Р°С‚ СЃРѕС…СЂР°РЅС‘РЅ"))
-    .catch((e) => console.error("РћС€РёР±РєР°:", e));
+    .then(() => console.log("Результат сохранён"))
+    .catch((e) => console.error("Ошибка:", e));
 
   const retryBtn = document.createElement("button");
-  retryBtn.innerText = "РџСЂРѕР№С‚Рё Р·Р°РЅРѕРІРѕ";
+  retryBtn.innerText = "Пройти заново";
   retryBtn.onclick = () => resetAndStartRound();
   retryBtn.classList.add("slide-up", "retry-button");
   document.querySelector(".container").appendChild(retryBtn);
 
   if (wrongAnswers.length > 0) {
-    console.log("РћС€РёР±РєРё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ:");
+    console.log("Ошибки пользователя:");
     wrongAnswers.forEach((err, i) => {
-      console.log(`${i + 1}) Р’РѕРїСЂРѕСЃ:`, err.question, "Р’Р°С€ РѕС‚РІРµС‚:", err.userAnswer);
+      console.log(`${i + 1}) Вопрос:`, err.question, "Ваш ответ:", err.userAnswer);
     });
   }
 }
